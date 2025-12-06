@@ -1,12 +1,14 @@
+// Task 5: Advanced types Part 1
+
 // DirectorInterface
-interface DirectorInterface {
+export interface DirectorInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
   workDirectorTasks(): string;
 }
 
 // TeacherInterface
-interface TeacherInterface {
+export interface TeacherInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
   workTeacherTasks(): string;
@@ -66,6 +68,23 @@ export function executeWork(employee: Director | Teacher): string {
   }
 }
 
+// Task 7: String literal types
+
+// String literal type Subjects
+export type Subjects = 'Math' | 'History';
+
+// teachClass function
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else {
+    return 'Teaching History';
+  }
+}
+
 // Example usage
 console.log(executeWork(createEmployee(200)));  // Getting to work
 console.log(executeWork(createEmployee(1000))); // Getting to director tasks
+
+console.log(teachClass('Math'));    // Teaching Math
+console.log(teachClass('History')); // Teaching History
