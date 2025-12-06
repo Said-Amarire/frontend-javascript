@@ -1,7 +1,6 @@
-// task_4/js/subjects/Subject.ts
-
-namespace Subjects {
-  export interface Subject {
-    setTeacher(teacher: Teacher): void;
+class Subject {
+  teacher: Teacher;
+  setTeacher(teacher: Teacher): void {
+    this.teacher = teacher;
   }
 }
