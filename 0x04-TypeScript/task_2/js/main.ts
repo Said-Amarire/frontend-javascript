@@ -77,12 +77,18 @@ export type Subjects = 'Math' | 'History';
 export function teachClass(todayClass: Subjects): string {
   if (todayClass === 'Math') {
     return 'Teaching Math';
-  } else {
+  } else if (todayClass === 'History') {
     return 'Teaching History';
   }
+  return '';
 }
 
 // Example usage
+
+console.log(createEmployee(200));         // Teacher
+console.log(createEmployee(1000));        // Director
+console.log(createEmployee('$500'));      // Director
+
 console.log(executeWork(createEmployee(200)));  // Getting to work
 console.log(executeWork(createEmployee(1000))); // Getting to director tasks
 
